@@ -1,6 +1,7 @@
 ### Definition
 
-- Construir uma aplicação pra atendimento de alguns critérios de segurança simulando o processo de autenticação
+- Build an application to meet some security criteria simulating the authentication process.
+
 - Business Roles:
 
   1. Not is possible create an user with same userId.
@@ -9,11 +10,11 @@
   4. Send initial password through email.
   5. The first access has limit until 30 minutes. After the userId shell to be cancelled.
 
-  Força da senha
+### Password Strength
 
-  - <= 30 = fraca - tamanho < 7 e letras e numéros a e A
-  - > 30 e <= 55 = média - tamanho < 7 e letras, numéros e carac esp
-  - > 45 = alto - tamanho > 7 e letras, numéros e carac esp
+- <= 30 = low - size < 7 , letters e numbers a e A
+- > 30 e <= 55 = medium - size < 7 e letters, numbers and special character
+- > 45 = high - size > 7, letters, numbers and special character
 
 ### Languages
 
@@ -36,7 +37,7 @@
 - The app run into a docker container because is compatible in any environment (Windows or Linux).
 - In the BackEnd has NodeJS controling workflow.
 
-### Step-to-Steop for running
+### Step-to-Step for running
 
 1. Install the docker environment (docker, docker-compose, docker engine)
 
