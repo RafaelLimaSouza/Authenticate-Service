@@ -4,11 +4,11 @@
 
 - Business Roles:
 
-  1. Not is possible create an user with same userId.
-  2. The system created first password.
-  3. Necessary password crypto.
-  4. Send initial password through email.
-  5. The first access has limit until 30 minutes. After the userId shell to be cancelled.
+1. Not is possible create an user with same userId.
+2. The system created first password.
+3. Necessary password crypto.
+4. Send initial password through email.
+5. The first access has limit until 30 minutes. After the userId shell to be cancelled.
 
 ### Password Strength
 
