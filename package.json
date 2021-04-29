@@ -1,0 +1,45 @@
+{
+  "name": "desafio",
+  "version": "0.0.1",
+  "description": "Desafio proposto na matéria de Segurança da Informação",
+  "main": "src/server.ts",
+  "repository": "https://github.com/RafaelLimaSouza/Authenticate-Service.git",
+  "author": "Rafael Lima",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "dev:server": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+  },
+  "dependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/nodemailer": "^6.4.1",
+    "@types/uuidv4": "^5.0.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "date-fns": "^2.19.0",
+    "date-fns-tz": "^1.1.3",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "nodemailer": "^6.5.0",
+    "pg": "^8.5.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.31",
+    "uuidv4": "^6.2.7"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.2.3"
+  }
+}
