@@ -12,9 +12,9 @@
 
 ### Password Strength
 
-- <= 30 = low - size < 7 , letters e numbers a e A
-- > 30 e <= 55 = medium - size < 7 e letters, numbers and special character
-- > 45 = high - size > 7, letters, numbers and special character
+- Role: <= 30 = low - size < 7 , letters e numbers a e A
+- Role: > 30 e <= 55 = medium - size < 7 e letters, numbers and special character
+- Role: > 45 = high - size > 7, letters, numbers and special character
 
 ### Languages
 
