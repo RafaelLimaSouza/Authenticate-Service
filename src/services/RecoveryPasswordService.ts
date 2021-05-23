@@ -15,20 +15,26 @@ interface Request {
 class RecoveryPasswordService {
   public async execute({ userId, emailAddress }: Request): Promise<User> {
     const userRepository = getRepository(User);
-    let user;
 
-    if (userId) {
-      user = await userRepository.findOne({
-        where: { userId },
-      });
-    } else if (emailAddress) {
+    if (!userId) {
+      throw new Error('Empty field');
+    }
+
+    const user = await userRepository.findOne({
+      where: { userId },
+    });
+    /* else if (emailAddress) {
       user = await userRepository.findOne({
         where: { emailAddress },
       });
-    }
+    } */
 
     if (!user) {
       throw new Error('User not found.');
+    }
+
+    if (user.status === StatusUserEnum.DISABLE) {
+      throw new Error('User canceled');
     }
 
     const randomPassword = await PasswordService.createPassword();

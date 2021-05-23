@@ -38,7 +38,8 @@ class MailService {
               <p>Seu cadastro foi criado com sucesso</p>
               <p> Seu login é ${userId} </p>
               <p> Sua senha inicial é ${passwordCurrent}.
-              <p> Cadastre sua nova senha no primeiro acesso. </br>`,
+              <p> Acesse o link http://localhost:3000</p>
+              <p>Cadastre sua nova senha no primeiro acesso.</p>`,
     };
 
     transporter.sendMail(mailOptions, function (error, info) {

@@ -20,9 +20,9 @@ class AuthenticateService {
     if (!user) {
       throw new Error('User not exists!');
     } else if (user.status !== StatusUserEnum.DISABLE) {
-      if (!user) {
+      /* if (!user) {
         throw new Error('Incorrect email/password combination.');
-      }
+      } */
 
       if (user.status == StatusUserEnum.PROVISIONAL) {
         const createdTime = user.updatedAt;
@@ -37,7 +37,6 @@ class AuthenticateService {
           throw new Error(`Time limit was exceeded. Create new login!`);
         }
       }
-
       const passwordMatched = await compare(password, user.passwordCurrent);
 
       if (!passwordMatched) {
@@ -63,11 +62,12 @@ class AuthenticateService {
     const usersRepository = getRepository(User);
 
     const user = await usersRepository.findOne({ where: { userId } });
-
-    if (user.status !== StatusUserEnum.DISABLE) {
-      if (!user) {
+    if (!user) {
+      throw new Error('User not exists!');
+    } else if (user.status !== StatusUserEnum.DISABLE) {
+      /* if (!user) {
         throw new Error('Incorrect email/password combination.');
-      }
+      } */
 
       if (user.status == StatusUserEnum.PROVISIONAL) {
         const createdTime = user.updatedAt;
