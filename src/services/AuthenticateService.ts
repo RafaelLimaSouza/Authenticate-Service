@@ -18,12 +18,8 @@ class AuthenticateService {
     const user = await usersRepository.findOne({ where: { userId } });
 
     if (!user) {
-      throw new Error('User not exists!');
+      throw new Error('Incorrect email/password combination.');
     } else if (user.status !== StatusUserEnum.DISABLE) {
-      /* if (!user) {
-        throw new Error('Incorrect email/password combination.');
-      } */
-
       if (user.status == StatusUserEnum.PROVISIONAL) {
         const createdTime = user.updatedAt;
         const limitTime = add(createdTime, {
@@ -37,6 +33,7 @@ class AuthenticateService {
           throw new Error(`Time limit was exceeded. Create new login!`);
         }
       }
+
       const passwordMatched = await compare(password, user.passwordCurrent);
 
       if (!passwordMatched) {
@@ -63,12 +60,8 @@ class AuthenticateService {
 
     const user = await usersRepository.findOne({ where: { userId } });
     if (!user) {
-      throw new Error('User not exists!');
+      throw new Error('Incorrect email/password combination.');
     } else if (user.status !== StatusUserEnum.DISABLE) {
-      /* if (!user) {
-        throw new Error('Incorrect email/password combination.');
-      } */
-
       if (user.status == StatusUserEnum.PROVISIONAL) {
         const createdTime = user.updatedAt;
         const limitTime = add(createdTime, {
@@ -102,7 +95,11 @@ class AuthenticateService {
         );
 
         if (user.indexPassword === true) {
-          if (passwordNew == user.passwordOld) {
+          const passwordOldMatched = await compare(
+            passwordNew,
+            user.passwordOld,
+          );
+          if (passwordOldMatched) {
             throw new Error('Create a new password not equal last!');
           }
         }
@@ -155,11 +152,7 @@ class AuthenticateService {
           user: userUpdated,
           strength: strength,
         };
-      } /* else {
-        throw new Error(
-          'Faça o logon através do link: http://localhost:3333/authenticate',
-        );
-      } */
+      }
     } else {
       throw new Error('User canceled. Create new login!');
     }

@@ -35,7 +35,7 @@
 ### How do it work?
 
 - The app run into a docker container because is compatible in any environment (Windows or Linux).
-- In the BackEnd has NodeJS controling workflow.
+- In the BackEnd has NodeJS controlling workflow.
 
 ### Step-to-Step for running
 

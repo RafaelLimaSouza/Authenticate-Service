@@ -23,11 +23,6 @@ class RecoveryPasswordService {
     const user = await userRepository.findOne({
       where: { userId },
     });
-    /* else if (emailAddress) {
-      user = await userRepository.findOne({
-        where: { emailAddress },
-      });
-    } */
 
     if (!user) {
       throw new Error('User not found.');
