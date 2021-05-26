@@ -1,16 +1,18 @@
-FROM node
+FROM node:10.13.0-alpine
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package.json .
 
-RUN npm install
+RUN yarn install
 
 COPY . .
 
 EXPOSE 3333
 
-CMD npm run dev:server
+CMD yarn add 'reflect-metadata'
+
+CMD yarn run dev:server
 
 
 
