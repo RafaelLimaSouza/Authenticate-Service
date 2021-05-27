@@ -44,3 +44,10 @@
 2. yarn install
 
 3. Run command docker-compose up
+
+4. Entry with commands below to start database
+   4.1 Entry in docker via terminal ou prompt de comando
+   4.2 docker ps -a
+   4.3 take the container ID
+   4.4 docker exec -i -t <container ID> /bin/sh
+   4.5 yarn typeorm migration:run

@@ -23,7 +23,7 @@ class AuthenticateService {
       if (user.status == StatusUserEnum.PROVISIONAL) {
         const createdTime = user.updatedAt;
         const limitTime = add(createdTime, {
-          minutes: 30,
+          minutes: 5,
         });
         const actualDate = new Date();
 
@@ -65,7 +65,7 @@ class AuthenticateService {
       if (user.status == StatusUserEnum.PROVISIONAL) {
         const createdTime = user.updatedAt;
         const limitTime = add(createdTime, {
-          minutes: 30,
+          minutes: 5,
         });
         const actualDate = new Date();
 
